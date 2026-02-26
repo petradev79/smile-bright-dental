@@ -1,0 +1,279 @@
+/*
+ * ============================================================================
+ * SMILE BRIGHT DENTAL — Design Tokens
+ * ============================================================================
+ *
+ * Tailwind CSS v4 compatible design tokens.
+ * Import this file in globals.css BEFORE the @theme block.
+ *
+ * Usage:  @import "./docs/design/design-tokens.css";
+ *         — or copy the :root block directly into globals.css.
+ *
+ * All tokens are exposed as CSS custom properties on :root so they can be
+ * referenced inside Tailwind's @theme inline { … } directive and used
+ * anywhere via var(--token-name).
+ * ============================================================================
+ */
+
+/* ──────────────────────────────────────────────────────────────────────────
+   1. COLOR PALETTE
+   ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Primary: Vivid Blue ── */
+  --color-primary-50:  #EBF3FF;
+  --color-primary-100: #D6E7FF;
+  --color-primary-200: #A8CDFF;
+  --color-primary-300: #70ABFF;
+  --color-primary-400: #3B8AFF;
+  --color-primary-500: #1A6EFF;   /* ← Main brand blue */
+  --color-primary-600: #0055E6;
+  --color-primary-700: #0043B8;
+  --color-primary-800: #003391;
+  --color-primary-900: #00246B;
+  --color-primary-950: #001744;
+
+  /* ── Secondary: Soft Sky ── */
+  --color-secondary-50:  #F0F7FF;
+  --color-secondary-100: #E0EFFF;
+  --color-secondary-200: #BAD9FF;
+  --color-secondary-300: #8EC0FF;
+  --color-secondary-400: #5CA3FF;
+  --color-secondary-500: #3D8BFF;
+  --color-secondary-600: #2A6FDB;
+  --color-secondary-700: #1D55AE;
+  --color-secondary-800: #164088;
+  --color-secondary-900: #0F2D62;
+  --color-secondary-950: #081A3E;
+
+  /* ── Neutral: Warm Slate ── */
+  --color-neutral-0:   #FFFFFF;
+  --color-neutral-50:  #F8F9FB;
+  --color-neutral-100: #F0F2F5;
+  --color-neutral-200: #E2E5EB;
+  --color-neutral-300: #C8CDD6;
+  --color-neutral-400: #9BA3B2;
+  --color-neutral-500: #6E7889;
+  --color-neutral-600: #515B6B;
+  --color-neutral-700: #3B4354;
+  --color-neutral-800: #272D3B;
+  --color-neutral-900: #171B26;
+  --color-neutral-950: #0C0F16;
+
+  /* ── Accent: Aqua Mint (fresh / clinical) ── */
+  --color-accent-50:  #ECFDF8;
+  --color-accent-100: #D1FAE9;
+  --color-accent-200: #A7F3D5;
+  --color-accent-300: #6EE7BB;
+  --color-accent-400: #34D39E;
+  --color-accent-500: #10B981;
+  --color-accent-600: #059668;
+  --color-accent-700: #047852;
+  --color-accent-800: #065F42;
+  --color-accent-900: #064E36;
+  --color-accent-950: #022C1E;
+
+  /* ── Semantic: Feedback ── */
+  --color-success-500: #16A34A;
+  --color-success-100: #DCFCE7;
+  --color-warning-500: #F59E0B;
+  --color-warning-100: #FEF3C7;
+  --color-error-500:   #DC2626;
+  --color-error-100:   #FEE2E2;
+  --color-info-500:    var(--color-primary-500);
+  --color-info-100:    var(--color-primary-50);
+
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     2. TYPOGRAPHY
+     ────────────────────────────────────────────────────────────────────────── */
+
+  /* Font families — loaded via next/font/google in layout.tsx */
+  --font-display: var(--font-playfair-display), "Georgia", serif;
+  --font-body:    var(--font-plus-jakarta-sans), "Segoe UI", sans-serif;
+  --font-mono:    var(--font-geist-mono), "Consolas", monospace;
+
+  /* Font sizes (with corresponding line-heights) */
+  --text-xs:    0.75rem;    /* 12px / 16px */
+  --text-sm:    0.875rem;   /* 14px / 20px */
+  --text-base:  1rem;       /* 16px / 24px */
+  --text-lg:    1.125rem;   /* 18px / 28px */
+  --text-xl:    1.25rem;    /* 20px / 28px */
+  --text-2xl:   1.5rem;     /* 24px / 32px */
+  --text-3xl:   1.875rem;   /* 30px / 36px */
+  --text-4xl:   2.25rem;    /* 36px / 40px */
+  --text-5xl:   3rem;       /* 48px / 52px */
+  --text-6xl:   3.75rem;    /* 60px / 64px */
+  --text-7xl:   4.5rem;     /* 72px / 76px */
+
+  /* Leading (line-height) */
+  --leading-none:    1;
+  --leading-tight:   1.15;
+  --leading-snug:    1.3;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose:   2;
+
+  /* Tracking (letter-spacing) */
+  --tracking-tighter: -0.03em;
+  --tracking-tight:   -0.015em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.025em;
+  --tracking-wider:   0.05em;
+
+  /* Font weights */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-black:    900;
+
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     3. SPACING SCALE
+     ────────────────────────────────────────────────────────────────────────── */
+
+  --space-0:    0;
+  --space-px:   1px;
+  --space-0-5:  0.125rem;   /* 2px  */
+  --space-1:    0.25rem;    /* 4px  */
+  --space-1-5:  0.375rem;   /* 6px  */
+  --space-2:    0.5rem;     /* 8px  */
+  --space-3:    0.75rem;    /* 12px */
+  --space-4:    1rem;       /* 16px */
+  --space-5:    1.25rem;    /* 20px */
+  --space-6:    1.5rem;     /* 24px */
+  --space-8:    2rem;       /* 32px */
+  --space-10:   2.5rem;     /* 40px */
+  --space-12:   3rem;       /* 48px */
+  --space-16:   4rem;       /* 64px */
+  --space-20:   5rem;       /* 80px */
+  --space-24:   6rem;       /* 96px */
+  --space-32:   8rem;       /* 128px */
+  --space-40:   10rem;      /* 160px */
+
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     4. LAYOUT
+     ────────────────────────────────────────────────────────────────────────── */
+
+  --container-sm:  640px;
+  --container-md:  768px;
+  --container-lg:  1024px;
+  --container-xl:  1200px;
+  --container-2xl: 1400px;
+
+  --content-width: 1200px;
+  --content-narrow: 720px;
+
+  /* Section vertical padding */
+  --section-py-sm: var(--space-12);   /* 48px  — mobile */
+  --section-py-md: var(--space-16);   /* 64px  — tablet */
+  --section-py-lg: var(--space-24);   /* 96px  — desktop */
+
+  /* Gutter */
+  --gutter: var(--space-4);           /* 16px  — mobile */
+  --gutter-md: var(--space-6);        /* 24px  — tablet */
+  --gutter-lg: var(--space-8);        /* 32px  — desktop */
+
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     5. BORDERS & RADII
+     ────────────────────────────────────────────────────────────────────────── */
+
+  --radius-none: 0;
+  --radius-sm:   0.25rem;   /* 4px  */
+  --radius-md:   0.5rem;    /* 8px  */
+  --radius-lg:   0.75rem;   /* 12px */
+  --radius-xl:   1rem;      /* 16px */
+  --radius-2xl:  1.25rem;   /* 20px */
+  --radius-3xl:  1.5rem;    /* 24px */
+  --radius-full: 9999px;    /* pill  */
+
+  --border-width-thin:    1px;
+  --border-width-default: 1.5px;
+  --border-width-thick:   2px;
+
+  --border-color-default: var(--color-neutral-200);
+  --border-color-strong:  var(--color-neutral-300);
+
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     6. SHADOWS
+     ────────────────────────────────────────────────────────────────────────── */
+
+  --shadow-xs:   0 1px 2px 0 rgb(0 0 0 / 0.04);
+  --shadow-sm:   0 1px 3px 0 rgb(0 0 0 / 0.06),
+                 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --shadow-md:   0 4px 6px -1px rgb(0 0 0 / 0.07),
+                 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg:   0 10px 15px -3px rgb(0 0 0 / 0.08),
+                 0 4px 6px -4px rgb(0 0 0 / 0.04);
+  --shadow-xl:   0 20px 25px -5px rgb(0 0 0 / 0.08),
+                 0 8px 10px -6px rgb(0 0 0 / 0.04);
+  --shadow-2xl:  0 25px 50px -12px rgb(0 0 0 / 0.18);
+
+  /* Brand-colored glow for CTAs and interactive elements */
+  --shadow-primary:     0 4px 14px 0 rgb(26 110 255 / 0.35);
+  --shadow-primary-lg:  0 8px 30px 0 rgb(26 110 255 / 0.30);
+
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     7. TRANSITIONS & ANIMATION
+     ────────────────────────────────────────────────────────────────────────── */
+
+  /* Durations */
+  --duration-fast:    120ms;
+  --duration-normal:  200ms;
+  --duration-slow:    350ms;
+  --duration-slower:  500ms;
+  --duration-reveal:  700ms;
+
+  /* Easings */
+  --ease-default: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-in:      cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:     cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out:  cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-bounce:  cubic-bezier(0.34, 1.8, 0.64, 1);
+
+  /* Composite transitions */
+  --transition-color:     color var(--duration-fast) var(--ease-default),
+                          background-color var(--duration-fast) var(--ease-default),
+                          border-color var(--duration-fast) var(--ease-default);
+  --transition-transform: transform var(--duration-normal) var(--ease-spring);
+  --transition-shadow:    box-shadow var(--duration-normal) var(--ease-out);
+  --transition-all:       all var(--duration-normal) var(--ease-default);
+
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     8. Z-INDEX LAYERS
+     ────────────────────────────────────────────────────────────────────────── */
+
+  --z-base:      0;
+  --z-raised:    10;
+  --z-dropdown:  100;
+  --z-sticky:    200;
+  --z-overlay:   300;
+  --z-modal:     400;
+  --z-toast:     500;
+  --z-tooltip:   600;
+
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     9. DECORATIVE / BRAND
+     ────────────────────────────────────────────────────────────────────────── */
+
+  /* Gradient: Hero & CTA backgrounds */
+  --gradient-brand:       linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
+  --gradient-brand-light: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-secondary-100) 100%);
+  --gradient-radial-glow: radial-gradient(ellipse at 50% 0%, rgb(26 110 255 / 0.12) 0%, transparent 70%);
+
+  /* Glass effect for overlapping cards */
+  --glass-bg:        rgb(255 255 255 / 0.75);
+  --glass-backdrop:  saturate(180%) blur(20px);
+  --glass-border:    1px solid rgb(255 255 255 / 0.35);
+
+  /* Decorative sparkle color (matches brand accent in references) */
+  --sparkle-color: var(--color-primary-400);
+}
