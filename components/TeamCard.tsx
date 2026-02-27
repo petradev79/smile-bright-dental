@@ -16,6 +16,7 @@ export function TeamCard({ name, role, image, href }: TeamCardProps) {
           src={image.src}
           alt={image.alt}
           fill
+          sizes="(min-width: 768px) 192px, 160px"
           className="object-cover"
         />
       </div>
