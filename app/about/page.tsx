@@ -61,9 +61,9 @@ export default function AboutPage() {
         description="Our numbers speak for themselves — years of experience, thousands of smiles."
         stats={[
           { value: "10+", label: "Years Experience", size: "lg" },
-          { value: "3", label: "Expert Doctors", size: "md" },
-          { value: "4+", label: "Specialties", size: "md" },
-          { value: "5000+", label: "Happy Patients", size: "sm" },
+          { value: "3", label: "Expert Doctors", size: "lg" },
+          { value: "4+", label: "Specialties", size: "lg" },
+          { value: "5000+", label: "Happy Patients", size: "lg" },
         ]}
       />
 

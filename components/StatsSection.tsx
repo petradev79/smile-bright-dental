@@ -16,26 +16,25 @@ interface StatsSectionProps {
   stats: StatBubbleProps[];
 }
 
-function StatBubble({ value, label, size = "md" }: StatBubbleProps & { visible: boolean }) {
-  const sizeClasses = {
-    sm: "h-28 w-28",
-    md: "h-36 w-36",
-    lg: "h-44 w-44 bg-primary-500 text-white shadow-[0_4px_14px_0_rgb(26_110_255/0.35)]",
-  };
-
+function StatBubble({
+  value,
+  label,
+  highlight = false,
+}: StatBubbleProps & { visible: boolean; highlight?: boolean }) {
   return (
     <div
       className={cn(
-        "flex flex-col items-center justify-center rounded-full text-center",
-        size === "lg" ? sizeClasses.lg : size === "sm" ? sizeClasses.sm : sizeClasses.md,
-        size !== "lg" && (size === "md" ? "bg-primary-100" : "bg-neutral-100")
+        "flex flex-col items-center justify-center rounded-full text-center h-44 w-44",
+        highlight
+          ? "bg-primary-500 text-white shadow-[0_4px_14px_0_rgb(26_110_255/0.35)]"
+          : "bg-primary-100"
       )}
     >
       <span className="font-display text-2xl md:text-3xl font-bold">{value}</span>
       <span
         className={cn(
           "font-body text-xs md:text-sm mt-1",
-          size === "lg" ? "text-white/80" : "text-neutral-500"
+          highlight ? "text-white/80" : "text-neutral-500"
         )}
       >
         {label}
@@ -81,7 +80,7 @@ export function StatsSection({ title, description, stats }: StatsSectionProps) {
                 transitionDelay: `${i * 100}ms`,
               }}
             >
-              <StatBubble {...stat} visible={visible} />
+              <StatBubble {...stat} visible={visible} highlight={i === 0} />
             </div>
           ))}
         </div>
