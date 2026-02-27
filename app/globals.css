@@ -1,26 +1,116 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "../docs/design/design-tokens.css";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Primary ── */
+  --color-primary-50: #EBF3FF;
+  --color-primary-100: #D6E7FF;
+  --color-primary-200: #A8CDFF;
+  --color-primary-300: #70ABFF;
+  --color-primary-400: #3B8AFF;
+  --color-primary-500: #1A6EFF;
+  --color-primary-600: #0055E6;
+  --color-primary-700: #0043B8;
+  --color-primary-800: #003391;
+  --color-primary-900: #00246B;
+  --color-primary-950: #001744;
+
+  /* ── Secondary ── */
+  --color-secondary-50: #F0F7FF;
+  --color-secondary-100: #E0EFFF;
+  --color-secondary-200: #BAD9FF;
+  --color-secondary-300: #8EC0FF;
+  --color-secondary-400: #5CA3FF;
+  --color-secondary-500: #3D8BFF;
+  --color-secondary-600: #2A6FDB;
+  --color-secondary-700: #1D55AE;
+  --color-secondary-800: #164088;
+  --color-secondary-900: #0F2D62;
+  --color-secondary-950: #081A3E;
+
+  /* ── Neutral ── */
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-50: #F8F9FB;
+  --color-neutral-100: #F0F2F5;
+  --color-neutral-200: #E2E5EB;
+  --color-neutral-300: #C8CDD6;
+  --color-neutral-400: #9BA3B2;
+  --color-neutral-500: #6E7889;
+  --color-neutral-600: #515B6B;
+  --color-neutral-700: #3B4354;
+  --color-neutral-800: #272D3B;
+  --color-neutral-900: #171B26;
+  --color-neutral-950: #0C0F16;
+
+  /* ── Accent ── */
+  --color-accent-50: #ECFDF8;
+  --color-accent-100: #D1FAE9;
+  --color-accent-200: #A7F3D5;
+  --color-accent-300: #6EE7BB;
+  --color-accent-400: #34D39E;
+  --color-accent-500: #10B981;
+  --color-accent-600: #059668;
+  --color-accent-700: #047852;
+  --color-accent-800: #065F42;
+  --color-accent-900: #064E36;
+  --color-accent-950: #022C1E;
+
+  /* ── Semantic ── */
+  --color-success-500: #16A34A;
+  --color-success-100: #DCFCE7;
+  --color-warning-500: #F59E0B;
+  --color-warning-100: #FEF3C7;
+  --color-error-500: #DC2626;
+  --color-error-100: #FEE2E2;
+
+  /* ── Fonts ── */
+  --font-display: var(--font-playfair-display), "Georgia", serif;
+  --font-body: var(--font-plus-jakarta-sans), "Segoe UI", sans-serif;
+
+  /* ── Shadows ── */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.18);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ── Base Styles ── */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  color: var(--color-neutral-900);
+  background: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scroll Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 700ms cubic-bezier(0, 0, 0.2, 1),
+              transform 700ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* ── Sparkle Animation ── */
+@keyframes sparkle-spin {
+  0%, 100% { transform: rotate(0deg) scale(1); opacity: 1; }
+  50%      { transform: rotate(180deg) scale(0.85); opacity: 0.7; }
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .reveal.revealed {
+    transition: none;
+  }
 }
